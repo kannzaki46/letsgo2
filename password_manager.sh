@@ -17,8 +17,9 @@ do
 
            echo "パスワードの追加は成功しました。";;
 
-　　"Get Password")
-　　　　　echo "サービス名を入力してください："
+   "Get Password")
+
+       echo "サービス名を入力してください："
           read service_name
 
           passwordtxt=$(grep "^$service_name:" passwords.txt)
@@ -27,8 +28,8 @@ do
          then
               echo "そのサービスは登録されていません。"
          else
-              usernames=$(echo "passwordtxt" cut -d ":" -f 2 )
-              passwords=$(echo "passwordtxt" cut -d ":" -f 3 )
+              usernames=$(echo "passwordtxt" | cut -d ":" -f 2 )
+              passwords=$(echo "passwordtxt" | cut -d ":" -f 3 )
 
              echo "サービス名: $passwordtxt"
              echo "ユーザー名: $usernames"

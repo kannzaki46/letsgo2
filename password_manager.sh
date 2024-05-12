@@ -28,8 +28,8 @@ do
          then
               echo "そのサービスは登録されていません。"
          else
-              usernames=$(echo "passwordtxt" | cut -d ":" -f 2 )
-              passwords=$(echo "passwordtxt" | cut -d ":" -f 3 )
+              usernames=$(echo "$passwordtxt" | cut -d ":" -f 2 )
+              passwords=$(echo "$passwordtxt" | cut -d ":" -f 3 )
 
              echo "サービス名: $passwordtxt"
              echo "ユーザー名: $usernames"
